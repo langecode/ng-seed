@@ -5,8 +5,8 @@ node_js:
 sudo: required
 
 env:
-  - PROJECT_ID="future-finance-157420"
-  -
+  global:
+    - PROJECT_ID="future-finance-157420"
 
 services:
   - docker
