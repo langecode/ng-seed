@@ -5,6 +5,10 @@ node_js:
 
 sudo: required
 
+env:
+  global:
+    - PROJECT_ID="future-finance-157420"
+
 services:
   - docker
 
@@ -20,3 +24,8 @@ before_script:
 script:
   - npm install
   - ng build
+
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+      docker build -t ng-seed -t gcr.io/$PROJECT_ID/ng-seed:$TRAVIS_COMMIT .;
+    fi
