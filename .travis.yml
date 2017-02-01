@@ -2,8 +2,15 @@ language: node_js
 node_js:
   - "6"
 
+sudo: required
+
+services:
+  - docker
+
 before_script:
   - npm install -g angular-cli
 
 script: ng build
 
+after_success:
+  - docker build -t ng-seed .
