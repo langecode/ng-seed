@@ -26,7 +26,6 @@ script:
 
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
-    docker build -t ng-seed -t gcr.io/$PROJECT_ID/ng-seed\:$TRAVIS_COMMIT .;
     fi
 
 deploy:
