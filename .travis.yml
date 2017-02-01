@@ -4,6 +4,10 @@ node_js:
 
 sudo: required
 
+env:
+  - PROJECT_ID="future-finance-157420"
+  -
+
 services:
   - docker
 
@@ -22,5 +26,8 @@ script:
 
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
-    docker build -t ng-seed .;
+    docker build -t ng-seed -t gcr.io/$PROJECT_ID/ng-seed:$TRAVIS_COMMIT .;
     fi
+
+deploy:
+  - echo Going to deploy to Kubernetes...
