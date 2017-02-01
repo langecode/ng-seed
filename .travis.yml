@@ -4,10 +4,6 @@ node_js:
 
 sudo: required
 
-env:
-  global:
-    - PROJECT_ID="future-finance-157420"
-
 services:
   - docker
 
@@ -16,6 +12,7 @@ install:
   - echo "deb https://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
   - curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
   - sudo apt-get update && sudo apt-get install google-cloud-sdk kubectl
+  - export PROJECT_ID="future-finance-157420"
 
 before_script:
   - npm install -g angular-cli
