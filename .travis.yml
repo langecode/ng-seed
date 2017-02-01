@@ -1,12 +1,9 @@
 language: node_js
+
 node_js:
   - "6"
 
 sudo: required
-
-env:
-  global:
-    - PROJECT_ID="future-finance-157420"
 
 services:
   - docker
@@ -23,10 +20,6 @@ before_script:
 script:
   - npm install
   - ng build
-
-after_success:
-  - if [ "$TRAVIS_BRANCH" == "master" ]; then
-    fi
 
 deploy:
   - echo Going to deploy to Kubernetes...
