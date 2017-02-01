@@ -20,6 +20,3 @@ before_script:
 script:
   - npm install
   - ng build
-
-deploy:
-  - echo Going to deploy to Kubernetes...
