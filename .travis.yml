@@ -13,4 +13,6 @@ before_script:
 script: ng build
 
 after_success:
-  - docker build -t ng-seed .
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    docker build -t ng-seed .;
+    fi
