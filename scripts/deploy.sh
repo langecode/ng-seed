@@ -5,7 +5,7 @@ export CLOUDSDK_CORE_PROJECT=future-finance-157420
 export CLOUDSDK_CONTAINER_USE_CLIENT_CERTIFICATE=True
 export NAME=ng-seed
 
-#gcloud docker -- push $1
+gcloud docker -- push $1
 gcloud container clusters get-credentials hackathon
 
 # Test if deployed??
